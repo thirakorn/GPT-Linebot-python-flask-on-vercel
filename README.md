@@ -1,21 +1,34 @@
-# GPT-Linebot using python flask on vercel 
+# ChatGPT-Linebot using python flask on vercel 
 
-* last updated: 2022/12/15
+> 作者註：本專案因為作者我的免費 API 額度已經用完了，然後我現在使用的是 `ChatGPT Plus`，
+> 
+> 如果之後要我本人更新可能要等我哪天改用 ChatGPT API 了...
+> 
+> 現在最新的版本感謝網友 @willismax 提供的 PR：https://github.com/howarder3/GPT-Linebot-python-flask-on-vercel/pull/17
+> 
+> 但同樣的因為我沒有 ChatGPT API 的額度了... 所以也沒辦法測就直接 merge 了，
+>
+> 如果不能動再請大家幫忙發個 Issues/PR，感謝大大們🙏
 
-本文同步更新至我的個人網站：[【Side Project】(全圖文教學) 用 Python flask 實作類似 ChatGPT 的 Linebot，並部屬至 vercel 上](https://www.wongwonggoods.com/portfolio/personal_project/gpt-linebot-python-flask-for-vercel/)
+* last updated: 2023/10/9
+  - 更新說明 by @willismax，與修正的 [repo](https://github.com/willismax/GPT-Linebot-python-flask-on-vercel) (merged)
+    - vercel.json修正，改為第2版
+    - 修正單純安裝Flask==2.2.2 會與 Werkzeug 衝突的問題，在 requirements.txt 添加 Werkzeug==2.3.7 ([參考stack overflow](https://stackoverflow.com/questions/77213053/importerror-cannot-import-name-url-quote-from-werkzeug-urls))
 
 > `本篇教學無經驗的新手也可學習，無須寫任何程式。`
 > 
 > 無經驗預計 15 ~ 20 分鐘都可以完成。老手最快可能 5 分鐘就搞定
 
-* 這是使用 python flask 套件撰寫的 gpt-linebot
-* `不需寫 code`，只需去網頁設定一些內容，新手 15 分鐘內也能建立自己的 gpt-linebot
+* 這是使用 python flask 套件撰寫的 ChatGPT-Linebot
+* `不需寫 code`，只需去網頁設定一些內容，新手 15 分鐘內也能建立自己的 ChatGPT-Linebot
 * Why flask? 簡單好用，且支援 vercel
 * Why vercel? `免費`！！！免費額度就很夠一般使用，是 heroku 不再免費後的好選擇
 
-> 註：ChatGPT 與 gpt 是同樣任務的模型，而目前透過 API 只能使用到 GPT-3 (本程式使用的方法)
+> ~~註：ChatGPT 與 gpt 是同樣任務的模型，而目前透過 API 只能使用到 GPT-3 (本程式使用的方法)~~
 > 
-> 而非 ChatGPT 使用的 GPT-3.5
+> ~~而非 ChatGPT 使用的 GPT-3.5~~
+>
+> 已經改為 GPT-4，與最新的 ChatGPT 相同，只是改為使用 OpenAI API 的方式實現
 
 # 安裝步驟
 
@@ -233,12 +246,15 @@ Import Git Repository，選擇你剛剛 fork 的專案 import
 
 
 # 靈感來源
-
+* 本文同步更新至我的個人網站：[【Side Project】(全圖文教學) 用 Python flask 實作類似 ChatGPT 的 Linebot，並部屬至 vercel 上](https://www.wongwonggoods.com/portfolio/personal_project/gpt-linebot-python-flask-for-vercel/)
 * 感謝 [memochou1993/gpt-ai-assistant](https://github.com/memochou1993/gpt-ai-assistant?fbclid=IwAR25uqLdKoDKEQd591fSjyM2sDJJR3Xb-VgcXDIFV_7i3RMWWv2oiyG26RQ) 提供的 node.js 版本串接 vercel 示範，讓我有了想把 python linebot 也串進 vercel 的靈感，(目前感覺下來，免費又好用(?))
 * 感謝 [Lanznx/HealthLineBot](https://github.com/Lanznx/HealthLineBot) 給了一個很好的 python Django 範例，然而我不會 Django XD，vercel 官方文件好像也沒有提到這部份，總之後來就改成了 flask 版本，也符合 linebot 推薦的範例。
+
+
 
 # 參考資料
 
 * Line 官方提供的 python flask 製作 linebot 的 sample code [line/line-bot-sdk-python](https://github.com/line/line-bot-sdk-python)
 * Vercel 官方提供的 python runtime Flask 範例 [Deploy an example with Flask](https://vercel.com/docs/concepts/functions/serverless-functions/runtimes/python#python-version)
+
 
